@@ -49,12 +49,12 @@ class Fingerprint_viz(nn.Module):
         attend_mask = atom_degree_list.clone()
         attend_mask[attend_mask != mol_length-1] = 1
         attend_mask[attend_mask == mol_length-1] = 0
-        attend_mask = attend_mask.type(torch.cuda.FloatTensor).unsqueeze(-1)
+        attend_mask = attend_mask.type(torch.FloatTensor).unsqueeze(-1)
 
         softmax_mask = atom_degree_list.clone()
         softmax_mask[softmax_mask != mol_length-1] = 0
         softmax_mask[softmax_mask == mol_length-1] = -9e8 # make the softmax value extremly small
-        softmax_mask = softmax_mask.type(torch.cuda.FloatTensor).unsqueeze(-1)
+        softmax_mask = softmax_mask.type(torch.FloatTensor).unsqueeze(-1)
 
         batch_size, mol_length, max_neighbor_num, fingerprint_dim = neighbor_feature.shape
         atom_feature_expand = atom_feature.unsqueeze(-2).expand(batch_size, mol_length, max_neighbor_num, fingerprint_dim)
@@ -135,7 +135,7 @@ class Fingerprint_viz(nn.Module):
         mol_softmax_mask = atom_mask.clone()
         mol_softmax_mask[mol_softmax_mask == 0] = -9e8
         mol_softmax_mask[mol_softmax_mask == 1] = 0
-        mol_softmax_mask = mol_softmax_mask.type(torch.cuda.FloatTensor)
+        mol_softmax_mask = mol_softmax_mask.type(torch.FloatTensor)
         
         for t in range(self.T):
             
