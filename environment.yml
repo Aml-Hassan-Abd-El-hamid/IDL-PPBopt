@@ -21,4 +21,6 @@ dependencies:
   - scipy
   - cairosvg
   - jupyter 
+  - setuptools>=61.0
+  - build
  

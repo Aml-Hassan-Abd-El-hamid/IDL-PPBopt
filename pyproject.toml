@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "IDLPPBopt"
+dynamic = ["version"]
+description = "Code for 'IDL-PPBopt: A Strategy for Prediction and Optimization of Human Plasma Protein Binding of Compounds via an Interpretable Deep Learning Method'"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {text = "GPL-3.0 license"}
+authors = [
+	{name = "Louchaofeng"},
+]
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Topic :: Scientific/Engineering :: Bio-Informatics",
+	"Topic :: Scientific/Engineering :: Chemistry",
+	"Intended Audience :: Science/Research",
+]
+
+[project.urls]
+Repository = "https://github.com/Aml-Hassan-Abd-El-hamid/IDL-PPBopt/tree/cuda-enabled"
+"Source Repository" = "https://github.com/Louchaofeng/IDL-PPBopt"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "IDLPPBopt.__init__.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["Code"]
+

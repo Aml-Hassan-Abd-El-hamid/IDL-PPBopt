@@ -2,7 +2,7 @@ from __future__ import division
 import operator
 from math import log
 from time import time
-from sarpy.SARpytools import *
+from .SARpytools import *
 
 def collectSubs(structures, grinder):
     if not structures:

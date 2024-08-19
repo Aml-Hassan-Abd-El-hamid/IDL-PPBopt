@@ -14,10 +14,25 @@ That version of the model uses cuda.
 ## Installation
 Using conda:
 
-1- Clone that repo. <br>
-2- Run the follwing command on the terminal inside the repo folder: `conda env create -f environment.yml`<br>
+```sh
+# 1- Clone that repo.
+git clone https://github.com/Aml-Hassan-Abd-El-hamid/IDL-PPBopt.git
 
-To activate the conda environment run that command: `conda activate IDL_PPBopt_cuda`<br>
+# 2- Create conda environment form inside the repo folder.
+cd IDL-PPBopt
+conda env create -f environment.yml
+
+# 3- Activate conda environment.
+conda activate IDL_PPBopt_cuda
+
+# 4- Build and install the modules insider the repo folder.
+make build
+make install
+```
+
+## Usage
+The above instructions allow the import of two new modules: `AttentiveFP` and `IDLPPBopt`.
+Have a look at the examples for detailed use instructions.
 
 ## Model
 The iPPB model was trained with AttentiveFP algorithm and saved in the "saved_models" file.
